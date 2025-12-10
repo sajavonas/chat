@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Chat App</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+    <div id='auth'>
+        <input type='password' id='password' placeholder='Enter password'>
+        <button onclick='authenticate()'>Login</button>
+    </div>
+    <div id='chat' style='display:none;'>
+        <ul id='messages'></ul>
+        <input id='m' autocomplete='off'><button onclick='sendMessage()'>Send</button>
+    </div>
+    <script src='/socket.io/socket.io.js'></script>
+    <script src='script.js'></script>
+</body>
+</html>
