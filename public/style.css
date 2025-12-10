@@ -1,6 +1,0 @@
-body { font-family: Arial, sans-serif; background: #f4f4f4; }
-.login-container, .chat-container { width: 300px; margin: 100px auto; padding: 20px; background: #fff; border-radius: 8px; text-align: center; }
-input { width: 80%; padding: 10px; margin: 10px 0; }
-button { padding: 10px 20px; }
-ul { list-style: none; padding: 0; }
-li { background: #eee; margin: 5px; padding: 10px; border-radius: 4px; }
