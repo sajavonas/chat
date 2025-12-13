@@ -34,11 +34,26 @@ function addMessage(message) {
     }
     document.getElementById('messages').appendChild(item);
 }
+
+function addMessage(message) {
+  const item = document.createElement('li');
+  item.textContent = `${message.text} (${message.timestamp})`;
+  item.dataset.id = String(message.id);
+
+  if (!message.deleted) {
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'Удалить';
+    delBtn.onclick = () => socket.emit('delete message', message.id);
+    item.appendChild(delBtn);
+  }
+
+  document.getElementById('messages').appendChild(item);
+}
+
 socket.on('delete message', (id) => {
-    const items = document.querySelectorAll('#messages li');
-    items.forEach(item => {
-        if (item.textContent.includes(id)) {
-            item.remove();
-        }
-    });
+  const li = document.querySelector(`#messages li[data-id="${id}"]`);
+  if (li) li.remove();
+});
+``
+
 });
